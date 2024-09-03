@@ -13,11 +13,11 @@ class Gameboard {
       }
     }
   }
-  placeShip(x, y) {
+  placeShip(y, x) {
     const newShip = new Ship(1);
     this.coords[y][x] = newShip;
   }
-  receiveAttack(x, y) {
+  receiveAttack(y, x) {
     if (this.coords[y][x] === 0) {
       console.log("You Missed! X: " + x + ", Y: " + y);
     } else {
@@ -28,7 +28,7 @@ class Gameboard {
 
 const board = new Gameboard(5, 5);
 console.log(board.coords);
-board.placeShip(3, 4);
+board.placeShip(4, 3);
 board.receiveAttack(3, 4);
 board.receiveAttack(4, 3);
 console.log(board.coords);
